@@ -1,0 +1,301 @@
+\documentclass[twocolumn, landscape, a5paper]{book}
+%\documentclass[aps,prb,reprint, landscape, twocolumn, a5paper]{revtex4-1}
+\usepackage[lmargin=2cm, rmargin=2cm, tmargin=2cm, bmargin=2cm,centering]{geometry}
+%\geometry{papersize={148mm,105mm}}
+\usepackage[]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+%\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage[mtpscr, mtpccal]{mtpro2}
+\pdfmapfile{=mtpro2.map}
+%\usepackage[chorded]{songs}
+\usepackage{graphicx, fancyhdr}
+\usepackage{afterpage}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{fontawesome5}
+\usepackage{lipsum, ulem}
+%\usepackage{multicol}
+\usepackage{enumitem}
+\setlist[enumerate]{font=\bfseries, itemsep=0.5cm}
+\pagestyle{fancy}
+\pagenumbering{arabic}
+
+\setmainfont{Times New Roman}
+
+\usepackage[titles]{tocloft}
+\renewcommand{\cftdot}{}
+
+% remove header
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+% add pagenumbering
+\cfoot{\dotuline{\thepage}}
+
+\newcommand{\refrain}{\vspace{0.4cm}\hspace{-0.5cm}\textbf{Refrain:} \\ \itshape}
+\newcommand{\Reff}{\raisebox{0.3mm}{\fontsize{7pt}{0pt} \faPlus} \textbf{Ref.}}
+
+\renewcommand{\verse}{\upshape \item}
+\renewcommand{\title}[1]{%
+	\addcontentsline{toc}{section}{#1 \textbf{\thepage}}
+	\dotuline{\sffamily\Large\textbf{#1}}}
+\newcommand{\titlee}[1]{%
+	\addcontentsline{toc}{section}{#1 \textbf{\thepage}}
+	\sffamily\Large\textbf{#1}}
+
+\newcommand{\acc}[1]{\raisebox{0.5mm}{\fontsize{7pt}{7pt}\selectfont\sffamily\textbf{\textup{#1}}}}
+
+% define tcolorbox env 
+\newtcolorbox{mybox}[1]{breakable,pad at break*=1mm, fonttitle=\LARGE , bottomtitle=0.1cm, top=0.35cm, bottom=0.35cm, toptitle=0.1cm, after skip=0.25cm, segmentation style={thick, darkgray!60}, adjusted title={#1}, left=1mm, right=1mm, lines before break=15, enhanced}
+
+\begin{document}
+%	\begin{multicols}{2}
+%		\tableofcontents
+%	\end{multicols}
+
+\begin{mybox}{\titlee{Blowing in the wind}}
+	% Verse
+	\begin{enumerate}
+		\verse \acc{C} How many \acc{F} roads must a \acc{C} man walk \acc{Am} \\
+		down, \acc{C} before you \acc{F} call him a \acc{C} man \acc{G7}? \\         
+		\acc{C} How many \acc{F} seas must a \acc{C} white dove \acc{Am}  sail, \\                       
+		\acc{C} before she \acc{F} sleeps in the \acc{G7} sand? \\                                
+		Yes and \acc{C} how many \acc{F} times must the \\                                                                                                   
+		\acc{C} cannon balls \acc{Am}  fly, \acc{C} before they’re \acc{F} forever \\
+		\acc{G} banned \acc{G7}?
+		
+		% Refrain
+		\refrain The \acc{F} answer my \acc{G7} friend \\
+		is \acc{C} blowing in the \acc{Am}  wind \\
+		The \acc{F} answer is \acc{G7} blowing in the \acc{C} wind
+		
+		\verse \acc{C} How many \acc{F} years can a \acc{C} mountain \acc{Am}  exist, \\
+		\acc{C} before it is \acc{F} washed to the \acc{C} sea \acc{G7}? \\    
+		Yes and \acc{C} how many \acc{F} years must some \acc{C} \\    
+		people \acc{Am}  exist, \acc{C} before they’re \acc{F} allowed to \\
+		be \acc{G7} free? \\
+		Yes and \acc{C} how many \acc{F} times can a \acc{C} man \\
+		turn his \acc{Am}  head, \acc{C} pretending that he \acc{F} just \\
+		doesn’t \acc{G} see \acc{G7}? \Reff
+		\pagebreak
+		\verse  Yes and \acc{C} how many \acc{F} times must a \acc{C} man \\
+		look \acc{Am}  up, \acc{C} before he can \acc{F} see the \acc{C} sky \acc{G7}? \\
+		Yes and \acc{C} how many \acc{F} ears must \acc{C} one man \acc{Am} \\
+		have, \acc{C} before he can \acc{F} hear people \acc{G7} cry? \\
+		Yes and \acc{C} how many \acc{F} deaths will it \acc{C} take till \\
+		he \acc{Am}  knows, \acc{C} that too many \acc{F} people have \acc{G} \\
+		died \acc{G7}? \Reff
+	\end{enumerate}
+\end{mybox}
+
+\begin{mybox}{\title{Irgendwie, Irgendwo, Irgendwann}}
+% Verse
+\begin{enumerate}
+	\verse \acc{hm} Im Sturz durch Raum und \acc{F\#m} Zeit \\
+	Richtung Unendlich-\acc{G}-keit \\
+	\acc{hm} fliegen Motten in das \acc{F\#m} Licht \\
+	genau wie du und \acc{G} ich. \acc{A} 
+	
+	\refrain \acc{Em} Irgendwie fängt irgend-\acc{C}-wann \\
+	irgendwo die Zukunft \acc{D} an, \\
+	ich warte nicht mehr \acc{G} lang. \\
+	\acc{Em} Liebe wird aus Mut ge- \acc{C} -macht, \\
+	denk nicht länger nach \\
+	wir \acc{Am} fahr’n auf Feuerrädern \\
+	Richtung \acc{D} Zukunft durch die Nacht \\
+	\acc{Em} Gib mir die \acc{C} Hand, \\
+	ich bau \acc{D} dir ein Schloß aus \acc{hm} Sand, \\
+	irgend- \acc{C}-wie, irgend-\acc{G} -wo, irgend- \acc{D}-wann. \\
+	\acc{Em} Die Zeit ist \acc{C} reif \\
+	für ein biß- \acc{D}-chen Zärtlich-\acc{hm}-keit, \\
+	irgend- \acc{C}-wie, irgend-\acc{G} -wo, irgend- \acc{D}-wann. 
+	
+	\verse \acc{hm} Im Sturz durch Zeit und \acc{F\#m} Raum \\
+	erwacht aus einem \acc{G} Traum. \acc{D} \\
+	\acc{hm} Nur ein kurzer Augen-\acc{F\#m}-blick, \\
+	dann kehrt die Nacht zu-\acc{G}-rück. \acc{A} \Reff 
+\end{enumerate}
+\end{mybox}
+
+\clearpage
+% ########################################	
+	
+{\centering\begin{tcolorbox}[hbox, enhanced, colback=white, bottom=1.5mm, left=0.5mm, right=1mm]
+	\titlee{Blowing in the wind}
+\end{tcolorbox}}
+
+% Verse
+\begin{enumerate}
+	\verse \acc{C} How many \acc{F} roads must a \acc{C} man walk \acc{Am} \\
+	down, \acc{C} before you \acc{F} call him a \acc{C} man \acc{G7}? \\         
+	\acc{C} How many \acc{F} seas must a \acc{C} white dove \acc{Am}  sail, \\                       
+	\acc{C} before she \acc{F} sleeps in the \acc{G7} sand? \\                                
+	Yes and \acc{C} how many \acc{F} times must the \\                                                                                                   
+	\acc{C} cannon balls \acc{Am}  fly, \acc{C} before they’re \acc{F} forever \\
+	\acc{G} banned \acc{G7}?
+	
+	% Refrain
+	\refrain The \acc{F} answer my \acc{G7} friend \\
+	is \acc{C} blowing in the \acc{Am}  wind \\
+	The \acc{F} answer is \acc{G7} blowing in the \acc{C} wind
+	
+	\verse \acc{C} How many \acc{F} years can a \acc{C} mountain \acc{Am}  exist, \\
+	\acc{C} before it is \acc{F} washed to the \acc{C} sea \acc{G7}? \\    
+	Yes and \acc{C} how many \acc{F} years must some \acc{C} \\    
+	people \acc{Am}  exist, \acc{C} before they’re \acc{F} allowed to \\
+	be \acc{G7} free? \\
+	Yes and \acc{C} how many \acc{F} times can a \acc{C} man \\
+	turn his \acc{Am}  head, \acc{C} pretending that he \acc{F} just \\
+	doesn’t \acc{G} see \acc{G7}? \Reff
+	\pagebreak
+	\verse  Yes and \acc{C} how many \acc{F} times must a \acc{C} man \\
+	look \acc{Am}  up, \acc{C} before he can \acc{F} see the \acc{C} sky \acc{G7}? \\
+	Yes and \acc{C} how many \acc{F} ears must \acc{C} one man \acc{Am} \\
+	have, \acc{C} before he can \acc{F} hear people \acc{G7} cry? \\
+	Yes and \acc{C} how many \acc{F} deaths will it \acc{C} take till \\
+	he \acc{Am}  knows, \acc{C} that too many \acc{F} people have \acc{G} \\
+	died \acc{G7}? \Reff \\
+\end{enumerate}
+
+% Title
+{\centering\begin{tcolorbox}[hbox, enhanced, colback=white, bottom=1.5mm, left=0.5mm, right=1mm]
+	\titlee{Irgendwie, Irgendwo, Irgendwann}
+\end{tcolorbox}}
+
+% Verse
+\begin{enumerate}
+	\verse \acc{hm} Im Sturz durch Raum und \acc{F\#m} Zeit \\
+	Richtung Unendlich-\acc{G}-keit \\
+	\acc{hm} fliegen Motten in das \acc{F\#m} Licht \\
+	genau wie du und \acc{G} ich. \acc{A} 
+	
+	\refrain \acc{Em} Irgendwie fängt irgend-\acc{C}-wann \\
+	irgendwo die Zukunft \acc{D} an, \\
+	ich warte nicht mehr \acc{G} lang. \\
+	\acc{Em} Liebe wird aus Mut ge- \acc{C} -macht, \\
+	denk nicht länger nach \\
+	wir \acc{Am} fahr’n auf Feuerrädern \\
+	Richtung \acc{D} Zukunft durch die Nacht \\
+	\acc{Em} Gib mir die \acc{C} Hand, \\
+	ich bau \acc{D} dir ein Schloß aus \acc{hm} Sand, \\
+	irgend- \acc{C}-wie, irgend-\acc{G} -wo, irgend- \acc{D}-wann. \\
+	\acc{Em} Die Zeit ist \acc{C} reif \\
+	für ein biß- \acc{D}-chen Zärtlich-\acc{hm}-keit, \\
+	irgend- \acc{C}-wie, irgend-\acc{G} -wo, irgend- \acc{D}-wann. 
+	
+	\verse \acc{hm} Im Sturz durch Zeit und \acc{F\#m} Raum \\
+	erwacht aus einem \acc{G} Traum. \acc{D} \\
+	\acc{hm} Nur ein kurzer Augen-\acc{F\#m}-blick, \\
+	dann kehrt die Nacht zu-\acc{G}-rück. \acc{A} \Reff 
+\end{enumerate}
+
+\clearpage
+% ########################################
+
+% Title
+\title{Blowing in the wind}
+
+% Verse
+\begin{enumerate}
+	\verse \acc{C} How many \acc{F} roads must a \acc{C} man walk \acc{Am} \\
+	down, \acc{C} before you \acc{F} call him a \acc{C} man \acc{G7}? \\         
+	\acc{C} How many \acc{F} seas must a \acc{C} white dove \acc{Am}  sail, \\                       
+	\acc{C} before she \acc{F} sleeps in the \acc{G7} sand? \\                                
+	Yes and \acc{C} how many \acc{F} times must the \\                                                                                                   
+	\acc{C} cannon balls \acc{Am}  fly, \acc{C} before they’re \acc{F} forever \\
+	\acc{G} banned \acc{G7}?
+	
+	% Refrain
+	\refrain The \acc{F} answer my \acc{G7} friend \\
+	is \acc{C} blowing in the \acc{Am}  wind \\
+	The \acc{F} answer is \acc{G7} blowing in the \acc{C} wind
+	
+	\verse \acc{C} How many \acc{F} years can a \acc{C} mountain \acc{Am}  exist, \\
+	\acc{C} before it is \acc{F} washed to the \acc{C} sea \acc{G7}? \\    
+	Yes and \acc{C} how many \acc{F} years must some \acc{C} \\    
+	people \acc{Am}  exist, \acc{C} before they’re \acc{F} allowed to \\
+	be \acc{G7} free? \\
+	Yes and \acc{C} how many \acc{F} times can a \acc{C} man \\
+	turn his \acc{Am}  head, \acc{C} pretending that he \acc{F} just \\
+	doesn’t \acc{G} see \acc{G7}? \Reff
+	\pagebreak
+	\verse  Yes and \acc{C} how many \acc{F} times must a \acc{C} man \\
+	look \acc{Am}  up, \acc{C} before he can \acc{F} see the \acc{C} sky \acc{G7}? \\
+	Yes and \acc{C} how many \acc{F} ears must \acc{C} one man \acc{Am} \\
+	have, \acc{C} before he can \acc{F} hear people \acc{G7} cry? \\
+	Yes and \acc{C} how many \acc{F} deaths will it \acc{C} take till \\
+	he \acc{Am}  knows, \acc{C} that too many \acc{F} people have \acc{G} \\
+	died \acc{G7}? \Reff
+\end{enumerate}
+
+
+% Title
+\title{Irgendwie, Irgendwo, Irgendwann}
+
+% Verse
+\begin{enumerate}
+	\verse \acc{hm} Im Sturz durch Raum und \acc{F\#m} Zeit \\
+	Richtung Unendlich-\acc{G}-keit \\
+	\acc{hm} fliegen Motten in das \acc{F\#m} Licht \\
+	genau wie du und \acc{G} ich. \acc{A} 
+	
+	\refrain \acc{Em} Irgendwie fängt irgend-\acc{C}-wann \\
+	irgendwo die Zukunft \acc{D} an, \\
+	ich warte nicht mehr \acc{G} lang. \\
+	\acc{Em} Liebe wird aus Mut ge- \acc{C} -macht, \\
+	denk nicht länger nach \\
+	wir \acc{Am} fahr’n auf Feuerrädern \\
+	Richtung \acc{D} Zukunft durch die Nacht \\
+	\acc{Em} Gib mir die \acc{C} Hand, \\
+	ich bau \acc{D} dir ein Schloß aus \acc{hm} Sand, \\
+	irgend- \acc{C}-wie, irgend-\acc{G} -wo, irgend- \acc{D}-wann. \\
+	\acc{Em} Die Zeit ist \acc{C} reif \\
+	für ein biß- \acc{D}-chen Zärtlich-\acc{hm}-keit, \\
+	irgend- \acc{C}-wie, irgend-\acc{G} -wo, irgend- \acc{D}-wann. 
+	
+	\verse \acc{hm} Im Sturz durch Zeit und \acc{F\#m} Raum \\
+	erwacht aus einem \acc{G} Traum. \acc{D} \\
+	\acc{hm} Nur ein kurzer Augen-\acc{F\#m}-blick, \\
+	dann kehrt die Nacht zu-\acc{G}-rück. \acc{A} \Reff 
+\end{enumerate}
+
+
+\title{Wir vom Pfad} 
+
+\begin{enumerate}
+	\verse \acc{E} Wir vom Pfad sind lust’ge Brüder, \\ 
+	haben frohen \acc{H7} Mut, ja Mut, \\ 
+	\acc{A} singen lauter \acc{E} lust’ge lust’ge Lieder \\ 
+	\acc{H7} sind den Menschen \acc{E} gut, ja gut. bis 
+	
+	\refrain \acc{E} Pfadfinder müssen, den Menschen nützen, \\ 
+	Pfadfinder \acc{H7} müssen fröhlich \acc{E} sein \\ 
+	(ja fröhlich sein / zwo drei vier) bis \\ 
+	\acc{A} Hollaridi- \acc{E}-ra, ja wir \acc{H7} 23ger wir sind \acc{E} da bis 
+	
+	\verse \acc{E} Immer fröhlich, immer heiter, \\ 
+	wandern wir durch \acc{H7} Berg und Tal \\ 
+	\acc{A} und marchieren \acc{E} immer immer weiter, \\ 
+	\acc{H7} wenn der Weg auch \acc{E} steil und schmal bis \\ 
+	\Reff
+	
+	\verse \acc{E} Wenn am Abend wir im Kreise \\ 
+	lagern um des \acc{H7} Feuers Schein, \\ 
+	\acc{A} dann erklingt so manche schöne Weise \\ 
+	\acc{H7} in die stille Nacht hinein bis \Reff
+	
+	\verse \acc{E} Ist das Lager nun zu Ende \\ 
+	und die schöne \acc{H7} Zeit ist aus, \\ 
+	\acc{A} dann schickt uns der Bruder-Lagerleiter \\ 
+	zer-\acc{H7}-rissen und zer-\acc{E}-fetzt nach Haus bis \\ 
+	\Reff
+\end{enumerate}
+\newpage
+% toc
+{\noindent\LARGE\textbf{A}} \\
+\hyperlink{page.2}{Blowing in the wind \textbf {2}} \\ 
+\hyperlink{page.2}{Irgendwie, Irgendwo, Irgendwann \textbf {2}} \\ 
+\hyperlink{page.3}{Wir vom Pfad \textbf {3}} \\ 
+\end{document}  
+
