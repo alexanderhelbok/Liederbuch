@@ -1,0 +1,16 @@
+**/build
+**/PDF
+*.synctex.gz
+*.log
+*.aux
+*.out
+*.auxlock
+*.bbl
+*.bcl
+*.bcf
+*.blg
+*.nav
+*.snm
+*.run.xml
+*.toc
+
