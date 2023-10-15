@@ -24,6 +24,10 @@
 
 \setmainfont{Times New Roman}
 
+\makeatletter
+\def\input@path{{/home/taco/Documents/Liederbuch/texsongs/}}
+\makeatother
+
 % use for custom toc entries
 \usepackage[titles]{tocloft}
 \renewcommand{\cftdot}{}
@@ -37,7 +41,7 @@
 % add pagenumbering
 \cfoot{\dotuline{\thepage}}
 
-\newcommand{\refrain}{\vspace{0.4cm}\hspace{-0.5cm}\textbf{Refrain:} \\ \itshape}
+\newcommand{\refrain}[1]{\vspace{0.4cm}\hspace{-0.5cm}\textbf{#1} \\ \itshape}
 \newcommand{\Reff}{\raisebox{0.3mm}{\fontsize{7pt}{0pt} \faPlus} \textbf{Ref.}}
 
 \renewcommand{\verse}{\upshape \item}
@@ -48,6 +52,8 @@
 \newcommand{\titlee}[1]{%
 	\addcontentsline{toc}{section}{#1 \textbf{\thepage}}
 	\sffamily\Large\textbf{#1}}
+	
+\newcommand{\toctitle}[1]{{\noindent\LARGE\textbf{#1}} \\}
 
 \newcommand{\acc}[1]{\raisebox{0.5mm}{\fontsize{7pt}{7pt}\selectfont\sffamily\textbf{\textup{#1}}}}
 
@@ -58,9 +64,16 @@
 
 \newtcolorbox{verses}{breakable, lines before break=1, enhanced, colback=white, colframe=white, left=-1mm, top=-1mm, right=0mm, bottom=0mm}
 
+\newcommand{\myverse}[1]{\item
+	\leavevmode%
+	\adjustbox{valign=t}{%
+	\begin{verses}
+		#1
+	\end{verses}}}
+
 \begin{document}
 %	\begin{multicols}{2}
-%		\tableofcontents
+		\tableofcontents
 %	\end{multicols}
 
 \begin{mybox}{\titlee{Blowing in the wind}}
@@ -254,36 +267,11 @@
 \end{enumerate}
 
 
-% Title
-\title{Irgendwie, Irgendwo, Irgendwann}
+\input{irgendwie}
 
-% Verse
-\begin{enumerate}
-	\verse \acc{hm} Im Sturz durch Raum und \acc{F\#m} Zeit \\
-	Richtung Unendlich-\acc{G}-keit \\
-	\acc{hm} fliegen Motten in das \acc{F\#m} Licht \\
-	genau wie du und \acc{G} ich. \acc{A} 
-	
-	\refrain \acc{Em} Irgendwie fängt irgend-\acc{C}-wann \\
-	irgendwo die Zukunft \acc{D} an, \\
-	ich warte nicht mehr \acc{G} lang. \\
-	\acc{Em} Liebe wird aus Mut ge- \acc{C} -macht, \\
-	denk nicht länger nach \\
-	wir \acc{Am} fahr’n auf Feuerrädern \\
-	Richtung \acc{D} Zukunft durch die Nacht \\
-	\acc{Em} Gib mir die \acc{C} Hand, \\
-	ich bau \acc{D} dir ein Schloß aus \acc{hm} Sand, \\
-	irgend- \acc{C}-wie, irgend-\acc{G} -wo, irgend- \acc{D}-wann. \\
-	\acc{Em} Die Zeit ist \acc{C} reif \\
-	für ein biß- \acc{D}-chen Zärtlich-\acc{hm}-keit, \\
-	irgend- \acc{C}-wie, irgend-\acc{G} -wo, irgend- \acc{D}-wann. 
-	
-	\verse \acc{hm} Im Sturz durch Zeit und \acc{F\#m} Raum \\
-	erwacht aus einem \acc{G} Traum. \acc{D} \\
-	\acc{hm} Nur ein kurzer Augen-\acc{F\#m}-blick, \\
-	dann kehrt die Nacht zu-\acc{G}-rück. \acc{A} \Reff \\[5mm]
-\end{enumerate}
+\input{lady}
 
+\input{wonderwall}
 
 \title{Wir vom Pfad} 
 
@@ -315,11 +303,58 @@
 	zer-\acc{H7}-rissen und zer-\acc{E}-fetzt nach Haus bis \\ 
 	\Reff \\[5mm]
 \end{enumerate}
+
+\title{99 Luftballons} 
+
+\begin{enumerate}
+	\myverse{\acc{C} Hast du etwas Dm Zeit für mich \\ 
+		dann \acc{F} singe ich ein \acc{G7} Lied für dich \\ 
+		von \acc{C} 99 Dm Luftballons \\ 
+		auf \acc{F} ihrem Weg zum \acc{G7} Horizont. \\ 
+		\acc{C} Denkst du vielleicht Dm g’rad an mich, \\ 
+		dann \acc{F} singe ich ein \acc{G7} Lied für dich \\ 
+		von \acc{C} 99 Dm Luftballons \\ 
+		und \acc{F} dass sowas von \acc{G7} sowas kommt. \acc{C}}
+	
+	\myverse{\acc{C} 99 Dm Luftballons \\ 
+	auf \acc{F} ihrem Weg zum \acc{G7} Horizont \\ 
+	hielt \acc{C} man für UFOs Dm aus dem All, \\ 
+	da-\acc{F} -rum schickte ein G7General \\ 
+	’ne \acc{C} Fliegerstaffel Dm hinterher \\ 
+	\acc{A}-\acc{F}-larm zu geben, \acc{G7} wenn’s so wär’, \\ 
+	da-\acc{C}-bei war’n da am Dm Horizont \\ 
+	nur \acc{F} 99 \acc{G7} Luftballons.}
+	
+	\verse \acc{C} 99 Dm Düsenflieger \\ 
+	\acc{F} jeder war ein \acc{G7} grosser Krieger \\ 
+	\acc{C} hielten sich für Dm Captain Kirk, \\ 
+	das \acc{F} gab ein großes \acc{G7} Feuerwerk. \\ 
+	Die \acc{C} Nachbarn haben Dm nichts gerafft \\ 
+	und \acc{F} fühlten sich gleich \acc{G7} angemacht, \\ 
+	da-\acc{C}-bei schoß man am Dm Horizont \\ 
+	auf \acc{F} 99 \acc{G7} Luftballons.
+	
+	\verse \acc{C} 99 Dm Kriegsminister \\ 
+	\acc{F} Streichholz und Ben-\acc{G7}-zinkanister \\ 
+	\acc{C} hielten sich für Dm schlaue Leute \\ 
+	\acc{F} witterten schon \acc{G7} fette Beute \\ 
+	\acc{C} riefen: Krieg und Dm wollten Macht, \\ 
+	\acc{F} Mann, wer hätte \acc{G7} das gedacht \\ 
+	\acc{C} dass es einmal Dm soweit kommt \\ 
+	wegen \acc{F} 99 \acc{G7} Luftballons.
+	
+	\verse \acc{C} 99 Dm Jahre Krieg \\ 
+	\acc{F} ließen keinen \acc{G7} Platz für Sieger, \\ 
+	\acc{C} Kriegsminister Dm gibt’s nicht mehr \\ 
+	\acc{F} und auch keine \acc{G7} Düsenflieger. \\ 
+	\acc{C} Heute zieh’ ich Dm meine Runden \\ 
+	\acc{F} seh die Welt in \acc{G7} Trümmern liegen \\ 
+	\acc{C} hab ’nen Luftbal-Dm-lon gefunden
+	
+\end{enumerate}
+
 \newpage
 % toc
-{\noindent\LARGE\textbf{A}} \\
-\hyperlink{page.2}{Blowing in the wind \textbf {2}} \\ 
-\hyperlink{page.2}{Irgendwie, Irgendwo, Irgendwann \textbf {2}} \\ 
-\hyperlink{page.3}{Wir vom Pfad \textbf {3}} \\ 
+\input{toc}
 \end{document}  
 

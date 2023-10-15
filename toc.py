@@ -1,6 +1,9 @@
 import re
+import locale
 
-infile = "/home/taco/Documents/Liederbuch/build/Liederbuch.toc"
+locale.setlocale(locale.LC_ALL, 'de_AT.UTF-8')
+
+infile = "/home/taco/Documents/Liederbuch/build/Liederbuchtest.toc"
 outfile = "/home/taco/Documents/Liederbuch/toc.tex"
 
 pattern = r"{(.*?)}"
@@ -15,15 +18,22 @@ for i, line in enumerate(content[1:]):
         matches = re.findall(pattern, line)
         temp.append(matches[1])
 
-print(temp)
+#print(temp)
 
 letter = ""
+digitflag = False
 with open(outfile, 'w') as f:
-    for line in sorted(temp):
-        if line[0] is not letter:
-            letter = line[0]
-            f.write("\\toctitle{" + line[0] + "} \n")
-        num = re.findall(pagenum, line)[0]
-        f.write("\\hyperlink{page." + num + "}{" + line + "}} \\\\ \n")
+    for line in sorted(temp, key=locale.strxfrm):
+        if line[0].isdigit():
+            if not digitflag:
+                f.write("\\toctitle{\faHashtag} \n")
+            num = re.findall(pagenum, line)[0]
+            f.write("\\hyperlink{page." + num + "}{" + line + "}} \\\\ \n")
+        else:
+            if line[0] is not letter:
+                letter = line[0]
+                f.write("\\toctitle{" + line[0] + "} \n")
+            num = re.findall(pagenum, line)[0]
+            f.write("\\hyperlink{page." + num + "}{" + line + "}} \\\\ \n")
 
 
