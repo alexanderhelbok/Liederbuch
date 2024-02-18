@@ -3,6 +3,7 @@
 \usepackage{lmodern}
 \usepackage[most]{tcolorbox}
 \usepackage{lipsum, xifthen, xparse}
+\usepackage[]{xcolor}
 
 
 \makeatletter
@@ -47,18 +48,21 @@
 
 \def\titleflag{enhanced}
 
+\definecolor{mycolor}{HTML}{A9A9A9}
+
 \newtcolorbox{mytcbox2}[2][]{%
 	enhanced, 
 	breakable,
 	colback=white,
-	colframe=blue!30!black,
+	colframe=mycolor,
 	fontupper=\sffamily\bfseries\LARGE,
-%	boxrule=-1pt,
-	bottom=0.35cm,
-	top=0.35cm,
+	boxrule=-1pt,
+	bottom=0.1cm,
+	top=0.1cm,
+	left=0cm,
 %	
 	fonttitle=\sffamily\bfseries, 
-	attach boxed title to bottom right={yshift=0pt, xshift=0.7pt}, 
+	attach boxed title to bottom right={yshift=-.25mm}, 
 	boxed title size=title,
 	boxed title style={%
 		sharp corners, 
@@ -70,15 +74,15 @@
 		\ifthenelse{\equal{#2}{}}{
 			\draw[line width=.5mm, rounded corners=\kvtcb@arc, 
 			tcbcolframe] 
-			(frame.south east) rectangle 
-			(frame.north west);}
+			(frame.south east) -- (frame.south west);}
 		{%
 			\path[fill=tcbcolframe] (title.south west) 
 			to[out=180, in=0] ([xshift=-1cm]title.north west) --
 			(title.north west);
-			\draw[line width=.5mm, tcbcolframe, rounded corners=\kvtcb@arc] 
-			(frame.south east) -- (frame.north east) -- (frame.north west) -- 
-			(frame.south west) -- (frame.south east);}
+%			\draw[line width=.5mm, tcbcolframe, rounded corners=\kvtcb@arc] 
+%			(frame.south east) -- (frame.north east) -- (frame.north west) -- 
+%			(frame.south west) -- (frame.south east);}
+			\draw[line width=.5mm, tcbcolframe, rounded corners=\kvtcb@arc] (frame.south east) -- (frame.south west);}
 		}, 
 	title={#2},
 %	\titleflag,
@@ -87,9 +91,10 @@
 }
 \makeatother
 
+
 %\renewcommand{\titleflag}[1]{#1}
 
-\ExplSyntaxOn
+%\ExplSyntaxOn
 %\NewDocumentCommand{\myinput}{O{}}{
 %	\def\artist{#1}
 %	\ifthenelse{\equal{#1}{}}{%
@@ -106,7 +111,7 @@
 		Irgendwie, Irgendwo, Irgendwann
 	\end{mytcbox}
 	
-	\begin{mytcbox2}{Nena}
+	\begin{mytcbox2}{Nena und die crew, 1976}
 		Irgendwie, Irgendwo, Irgendwann
 	\end{mytcbox2}
 %	
