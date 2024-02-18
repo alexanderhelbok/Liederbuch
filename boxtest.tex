@@ -1,0 +1,115 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage[most]{tcolorbox}
+\usepackage{lipsum, xifthen, xparse}
+
+
+\makeatletter
+\newtcolorbox{mytcbox}[2][]{%
+	enhanced, 
+	breakable,
+	colback=white,
+	colframe=blue!30!black,
+	fontupper=\sffamily\bfseries\LARGE,
+	boxrule=-1pt,
+	bottom=4mm,
+	top=0.35cm,
+%	sharp corners=north,
+%	
+	fonttitle=\sffamily\bfseries, 
+	attach boxed title to bottom right={yshift=10pt}, 
+	boxed title size=title,
+	boxed title style={%
+		sharp corners, 
+		rounded corners=southeast, 
+		colback=tcbcolframe, 
+		left=-.1cm, right=0cm,
+		boxrule=0pt},
+	overlay unbroken={%
+		\ifthenelse{\equal{#2}{}}{
+			\draw[line width=.5mm, rounded corners=\kvtcb@arc, 
+			tcbcolframe] 
+			(frame.south east) rectangle 
+			(frame.north west);}
+		{%
+			\path[fill=tcbcolframe] (title.north west) 
+			to[out=180, in=0] ([xshift=-1cm]title.south west) --
+			(title.south west);
+			\draw[line width=.5mm, rounded corners=\kvtcb@arc, 
+			tcbcolframe] 
+			(title.south east) rectangle 
+			(frame.north west);}
+	}, 
+	title={#2},
+	#1
+}
+
+\def\titleflag{enhanced}
+
+\newtcolorbox{mytcbox2}[2][]{%
+	enhanced, 
+	breakable,
+	colback=white,
+	colframe=blue!30!black,
+	fontupper=\sffamily\bfseries\LARGE,
+%	boxrule=-1pt,
+	bottom=0.35cm,
+	top=0.35cm,
+%	
+	fonttitle=\sffamily\bfseries, 
+	attach boxed title to bottom right={yshift=0pt, xshift=0.7pt}, 
+	boxed title size=title,
+	boxed title style={%
+		sharp corners, 
+		rounded corners=southeast, 
+		colback=tcbcolframe, 
+		left=-.1cm, right=0cm,
+		boxrule=0pt},
+	overlay unbroken={%
+		\ifthenelse{\equal{#2}{}}{
+			\draw[line width=.5mm, rounded corners=\kvtcb@arc, 
+			tcbcolframe] 
+			(frame.south east) rectangle 
+			(frame.north west);}
+		{%
+			\path[fill=tcbcolframe] (title.south west) 
+			to[out=180, in=0] ([xshift=-1cm]title.north west) --
+			(title.north west);
+			\draw[line width=.5mm, tcbcolframe, rounded corners=\kvtcb@arc] 
+			(frame.south east) -- (frame.north east) -- (frame.north west) -- 
+			(frame.south west) -- (frame.south east);}
+		}, 
+	title={#2},
+%	\titleflag,
+%	sharp corners=southeast,
+	#1
+}
+\makeatother
+
+%\renewcommand{\titleflag}[1]{#1}
+
+\ExplSyntaxOn
+%\NewDocumentCommand{\myinput}{O{}}{
+%	\def\artist{#1}
+%	\ifthenelse{\equal{#1}{}}{%
+%		\def\titleflag{notitle}}{%
+%		\def\titleflag{sharp corners=southeast}}}
+%\ExplSyntaxOff
+
+\begin{document}
+%	\def\artist{aa a}
+%	\def\var{}
+%	\a
+%	\myinput[a]
+	\begin{mytcbox}{Nena}
+		Irgendwie, Irgendwo, Irgendwann
+	\end{mytcbox}
+	
+	\begin{mytcbox2}{Nena}
+		Irgendwie, Irgendwo, Irgendwann
+	\end{mytcbox2}
+%	
+%	\myinput
+%	\artist
+\end{document}

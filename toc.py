@@ -26,7 +26,7 @@ with open(outfile, 'w') as f:
     for line in sorted(temp, key=locale.strxfrm):
         if line[0].isdigit():
             if not digitflag:
-                f.write("\\toctitle{\faHashtag} \n")
+                f.write("\\toctitle{\\faHashtag} \n")
             num = re.findall(pagenum, line)[0]
             f.write("\\hyperlink{page." + num + "}{" + line + "}} \\\\ \n")
         else:
