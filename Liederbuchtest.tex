@@ -1,4 +1,4 @@
-\documentclass[twocolumn, portrait, a5paper]{scrbook}
+\documentclass[twocolumn, landscape, a5paper]{scrbook}
 %\documentclass[aps,prb,reprint, landscape, twocolumn, a5paper]{revtex4-1}
 \usepackage[lmargin=1cm, rmargin=1cm, tmargin=1.5cm, bmargin=1.5cm, centering, bindingoffset=1cm, includefoot, footskip=1cm]{geometry}
 %\geometry{papersize={148mm,105mm}}
@@ -84,10 +84,10 @@
 	
 \newcommand{\titlee}[1]{%
 	\addcontentsline{toc}{section}{#1 \textbf{\thepage}}
-	\centering
+%	\centering
 	\sffamily\Large\textbf{#1}}
 	
-% typeset big toc letters
+% typeset big toc letters (??why phantom a??)
 \newcommand{\toctitle}[1]{\phantom{a}\\[1ex]{\noindent\sffamily\LARGE\textbf{#1}} \\[2ex] \upshape}
 
 % accord macro
@@ -124,6 +124,8 @@
 	colbacktitle=white,
 	colframe=white,
 	coltitle=black}
+
+\definecolor{mycolor}{HTML}{A9A9A9}
 
 \makeatletter
 \newtcolorbox{finalbox}[2][]{%
@@ -205,8 +207,49 @@
 	\authorflag,
 	#1
 }
+
+\newtcolorbox{finalbox3}[2][]{%
+	enhanced, 
+	breakable,
+	colback=white,
+	colframe=mycolor,
+	fontupper=\sffamily\bfseries\LARGE,
+	boxrule=-1pt,
+	bottom=0cm,
+	top=0.1cm,
+	left=0cm,
+	%	
+	fonttitle=\sffamily\bfseries, 
+	attach boxed title to bottom right={yshift=-.2mm}, 
+	boxed title size=title,
+	boxed title style={%
+		sharp corners, 
+		rounded corners=southeast, 
+		colback=tcbcolframe, 
+		left=-.1cm, right=0cm,
+		boxrule=0pt},
+	overlay unbroken={%
+		\ifthenelse{\equal{#2}{}}{
+			\draw[line width=.5mm, rounded corners=\kvtcb@arc, 
+			tcbcolframe] 
+			(frame.south east) -- (frame.south west);}
+		{%
+			\path[fill=tcbcolframe] ([xshift=0.05mm]title.south west) 
+			to[out=180, in=0] ([xshift=-1cm]title.north west) --
+			([xshift=0.05mm]title.north west);
+			%			\draw[line width=.5mm, tcbcolframe, rounded corners=\kvtcb@arc] 
+			%			(frame.south east) -- (frame.north east) -- (frame.north west) -- 
+			%			(frame.south west) -- (frame.south east);}
+		\draw[line width=.5mm, tcbcolframe, rounded corners=\kvtcb@arc] (frame.south east) -- (frame.south west);}
+}, 
+title={#2},
+%	\titleflag,
+%	sharp corners=southeast,
+#1
+}
 \makeatother
 
+\usepackage{textpos}
 
 % define verse command as nested verse env in itemitze item
 \newcommand{\myverse}[1]{\item
@@ -228,12 +271,14 @@
 %	\tableofcontents
 
 
-\begin{mybox}{\titlee{Blowing in the wind}}
-	% Verse
-	\begin{enumerate}
-%		\item
-%		\leavevmode%
-%		\adjustbox{valign=t}{%
+\begin{finalbox3}{someone}
+	\titlee{Blowing in the wind}
+\end{finalbox3}
+% Verse
+\begin{enumerate}
+	%		\item
+	%		\leavevmode%
+	%		\adjustbox{valign=t}{%
 		\myverse{
 			\acc{C} How many \acc{F} roads must a \acc{C} man walk \acc{Am} \\
 			down, \acc{C} before you \acc{F} call him a \acc{C} man \acc{G7}? \\         
@@ -246,41 +291,40 @@
 		
 		% Refrain
 		\myrefrain{Refrain:}{The \acc{F} answer my \acc{G7} friend \\
-		is \acc{C} blowing in the \acc{Am}  wind \\
-		The \acc{F} answer is \acc{G7} blowing in the \acc{C} wind}
+			is \acc{C} blowing in the \acc{Am}  wind \\
+			The \acc{F} answer is \acc{G7} blowing in the \acc{C} wind}
 		
 		\item
 		\leavevmode%
 		\adjustbox{valign=t}{%
-		\begin{verses} 
-			\acc{C} How many \acc{F} years can a \acc{C} mountain \acc{Am}  exist, \\
-			\acc{C} before it is \acc{F} washed to the \acc{C} sea \acc{G7}? \\    
-			Yes and \acc{C} how many \acc{F} years must some \acc{C} \\    
-			people \acc{Am}  exist, \acc{C} before they’re \acc{F} allowed to \\
-			be \acc{G7} free? \\
-			Yes and \acc{C} how many \acc{F} times can a \acc{C} man \\
-			turn his \acc{Am}  head, \acc{C} pretending that he \acc{F} just \\
-			doesn’t \acc{G} see \acc{G7}? \Reff
+			\begin{verses} 
+				\acc{C} How many \acc{F} years can a \acc{C} mountain \acc{Am}  exist, \\
+				\acc{C} before it is \acc{F} washed to the \acc{C} sea \acc{G7}? \\    
+				Yes and \acc{C} how many \acc{F} years must some \acc{C} \\    
+				people \acc{Am}  exist, \acc{C} before they’re \acc{F} allowed to \\
+				be \acc{G7} free? \\
+				Yes and \acc{C} how many \acc{F} times can a \acc{C} man \\
+				turn his \acc{Am}  head, \acc{C} pretending that he \acc{F} just \\
+				doesn’t \acc{G} see \acc{G7}? \Reff
 		\end{verses}}
-%		\pagebreak
+		%		\pagebreak
 		\item
 		\leavevmode%
 		\adjustbox{valign=t}{%
-		\begin{verses} 
-			Yes and \acc{C} how many \acc{F} times must a \acc{C} man \\
-			look \acc{Am}  up, \acc{C} before he can \acc{F} see the \acc{C} sky \acc{G7}? \\
-			Yes and \acc{C} how many \acc{F} ears must \acc{C} one man \acc{Am} \\
-			have, \acc{C} before he can \acc{F} hear people \acc{G7} cry? \\
-			Yes and \acc{C} how many \acc{F} deaths will it \acc{C} take till \\
-			he \acc{Am}  knows, \acc{C} that too many \acc{F} people have \acc{G} \\
-			died \acc{G7}? \Reff
+			\begin{verses} 
+				Yes and \acc{C} how many \acc{F} times must a \acc{C} man \\
+				look \acc{Am}  up, \acc{C} before he can \acc{F} see the \acc{C} sky \acc{G7}? \\
+				Yes and \acc{C} how many \acc{F} ears must \acc{C} one man \acc{Am} \\
+				have, \acc{C} before he can \acc{F} hear people \acc{G7} cry? \\
+				Yes and \acc{C} how many \acc{F} deaths will it \acc{C} take till \\
+				he \acc{Am}  knows, \acc{C} that too many \acc{F} people have \acc{G} \\
+				died \acc{G7}? \Reff
 		\end{verses}}
 	\end{enumerate}
-\end{mybox}
 
-\begin{finalbox}{}
+\begin{finalbox3}{}
 	\titlee{Blowing in the wind}
-\end{finalbox}
+\end{finalbox3}
 % Verse
 \begin{enumerate}
 %		\item

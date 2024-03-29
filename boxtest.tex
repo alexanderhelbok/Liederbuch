@@ -1,9 +1,10 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{scrartcl}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage[most]{tcolorbox}
 \usepackage{lipsum, xifthen, xparse}
 \usepackage[]{xcolor}
+\usepackage[showboxes, relative]{textpos}
 
 
 \makeatletter
@@ -57,12 +58,12 @@
 	colframe=mycolor,
 	fontupper=\sffamily\bfseries\LARGE,
 	boxrule=-1pt,
-	bottom=0.1cm,
+	bottom=0cm,
 	top=0.1cm,
 	left=0cm,
 %	
 	fonttitle=\sffamily\bfseries, 
-	attach boxed title to bottom right={yshift=-.25mm}, 
+	attach boxed title to bottom right={yshift=-.2mm}, 
 	boxed title size=title,
 	boxed title style={%
 		sharp corners, 
@@ -76,9 +77,9 @@
 			tcbcolframe] 
 			(frame.south east) -- (frame.south west);}
 		{%
-			\path[fill=tcbcolframe] (title.south west) 
+			\path[fill=tcbcolframe] ([xshift=0.05mm]title.south west) 
 			to[out=180, in=0] ([xshift=-1cm]title.north west) --
-			(title.north west);
+			([xshift=0.05mm]title.north west);
 %			\draw[line width=.5mm, tcbcolframe, rounded corners=\kvtcb@arc] 
 %			(frame.south east) -- (frame.north east) -- (frame.north west) -- 
 %			(frame.south west) -- (frame.south east);}
@@ -102,18 +103,31 @@
 %		\def\titleflag{sharp corners=southeast}}}
 %\ExplSyntaxOff
 
+\setlength{\TPHorizModule}{\textwidth}
+\setlength{\TPVertModule}{\textheight}
+
+\usepackage{showframe}
+
 \begin{document}
-%	\def\artist{aa a}
-%	\def\var{}
-%	\a
-%	\myinput[a]
-	\begin{mytcbox}{Nena}
-		Irgendwie, Irgendwo, Irgendwann
-	\end{mytcbox}
-	
-	\begin{mytcbox2}{Nena und die crew, 1976}
-		Irgendwie, Irgendwo, Irgendwann
-	\end{mytcbox2}
+	asdf
+	\begin{textblock}{0.2}(0,0)
+		hallo
+	\end{textblock}
+%%	\def\artist{aa a}
+%%	\def\var{}
+%%	\a
+%%	\myinput[a]
+%	\begin{mytcbox}{Nena}
+%		Irgendwie, Irgendwo, Irgendwann
+%	\end{mytcbox}
+%	
+%	\begin{mytcbox2}{Nena und die crew, 1976}
+%		Irgendwie, Irgendwo, Irgendwann
+%	\end{mytcbox2}
+%	asdf
+%	\begin{textblock}{1}(0,0)
+%		hallo
+%	\end{textblock}
 %	
 %	\myinput
 %	\artist
